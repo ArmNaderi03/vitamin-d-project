@@ -1,0 +1,9 @@
+﻿Indicator,Count
+All records in Phase 1 final dataset,6337
+Adults 18+,6337
+Adults with valid vitamin D,5824
+Adults with valid recorded sex,6337
+Adults with positive cleaned phlebotomy weight,6029
+Adults eligible for this analysis,5824
+Near-zero source weights reclassified as zero in Phase 1,308
+Unique participants in analysis,5824

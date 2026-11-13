@@ -1,0 +1,11 @@
+# Phase 2 step 1 and standard Phase 1 Python packages
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+seaborn>=0.12
+ipython>=8
+jupyterlab>=4
+polars>=0.20
+samplics>=0.4
+# Phase 1 also imports `svy`; install the class-provided package if needed.

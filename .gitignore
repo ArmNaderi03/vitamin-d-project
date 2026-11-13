@@ -1,0 +1,21 @@
+# Original and participant-level datasets (never include in GitHub/CW ZIP)
+/final_data.csv
+/data/*.csv
+/data/**/*.csv
+/data/*.xpt
+/data/**/*.xpt
+/data/*.XPT
+/data/**/*.XPT
+/data/*.parquet
+/data/**/*.parquet
+/data/*.sas7bdat
+/data/**/*.sas7bdat
+# Python and Notebook scratch files
+**/.ipynb_checkpoints/
+**/__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+.pytest_cache/
