@@ -1,0 +1,16 @@
+﻿indicator,value
+eligible_adults_n,5824.0
+observed_event_count_K,1177.0
+event_rate_unweighted,0.20209478021978022
+event_rate_weighted,0.20838325811704314
+subgroup_size_n,30.0
+subgroup_repetitions,5000.0
+binomial_raw_expected_count,6.062843406593407
+binomial_raw_variance,4.8375744008309685
+hypergeometric_expected_count,6.062843406593407
+hypergeometric_exact_variance,4.813482067390457
+finite_population_variance_factor,0.9950197492701357
+simulated_subgroup_mean,6.131
+simulated_subgroup_variance_ddof0,4.996639000000002
+binomial_weighted_hypothetical_expected_count,6.251497743511294
+maximum_absolute_pmf_gap_hypergeom_vs_binom_raw,0.0004597527389813838

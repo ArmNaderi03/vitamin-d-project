@@ -1,0 +1,6 @@
+﻿Statistic,Unweighted,Weighted,Unit
+Sample size,5824.0,5824.0,participants
+Expectation / mean,80.91971668956045,78.192444534246,nmol/L
+Variance,1435.3253758297626,1280.3462074484428,(nmol/L)^2
+Standard deviation,37.885688271823206,35.78192570905656,nmol/L
+Second raw moment E[D^2],7983.325924948488,7394.4045896895805,(nmol/L)^2

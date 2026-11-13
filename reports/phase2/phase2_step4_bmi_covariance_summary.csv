@@ -1,0 +1,7 @@
+﻿Indicator,Unweighted,Weighted,Unit
+Participants with both measures,5744.0,5744.0,people
+Mean vitamin D,80.97011316155988,78.15207453921556,nmol/L
+Variance vitamin D,1436.73705540154,1279.235036783261,(nmol/L)^2
+Mean BMI,29.647214484679665,29.543828002701837,kg/m^2
+Variance BMI,53.122485277116105,52.90471605080892,(kg/m^2)^2
+"Covariance (vitamin D, BMI)",-30.389112411109856,-32.14394061865957,(nmol/L)*(kg/m^2)
