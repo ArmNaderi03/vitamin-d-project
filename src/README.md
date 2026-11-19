@@ -1,4 +1,5 @@
-# Reusable analysis functions
+# کدهای قابل استفادهٔ مجدد
 
-This folder is reserved for functions that are reused across project phases.
-Initial probability functions remain inside the notebook for course readability.
+این پوشه برای توابع مشترک میان فازهای پروژه در نظر گرفته شده است. در نسخهٔ فعلی، کد آموزشی تحلیل‌ها داخل نوت‌بوک‌های مستقل قرار دارد و وجود فایل تابع جداگانه در این پوشه الزاماً به معنای کامل‌تر بودن پروژه نیست.
+
+اگر در مراحل بعد تابع مشترکی از نوت‌بوک‌ها به این پوشه منتقل شد، نام فایل، ورودی‌ها و وابستگی‌ها باید در همین راهنما ثبت شود.

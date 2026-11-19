@@ -1,24 +1,60 @@
-# Data provenance and reconstruction
+# منبع داده و روش بازسازی
 
-Official source: CDC/NCHS, NHANES August 2021–August 2023
+## منبع رسمی
+
+پیمایش ملی بررسی سلامت و تغذیهٔ آمریکا (NHANES)، بازهٔ اوت ۲۰۲۱ تا اوت ۲۰۲۳، مرکز آمار سلامت آمریکا.
+
+آدرس مرجع:
+
 https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?Cycle=2021-2023
 
-Raw source files used in Phase 1:
-`DEMO_L`, `VID_L`, `BMX_L`, `BPXO_L`, `SMQ_L`, `DPQ_L`, `PAQ_L`.
-The participant-level merge uses `SEQN`. Derived variables include
-BMI, mean blood pressures, estimated 30-day cigarettes, PHQ-9,
-weighted physical activity and `WTPH2YR_clean`.
+## فایل‌های به‌کاررفته در فاز اول
 
-Local dataset: `data/final_data.csv`, generated at the end of Phase 1.
-It has 6,337 rows and 20 columns; 5,824 rows have valid serum vitamin D
-and a positive cleaned phlebotomy weight. The file is **not committed**.
+| فایل | محتوای کلی |
+|---|---|
+| `DEMO_L` | سن، جنس ثبت‌شده، اطلاعات جمعیت‌شناختی و وزن‌ها |
+| `VID_L` | سطح ویتامین D آزمایشگاهی |
+| `BMX_L` | اندازه‌گیری‌های بدنی و شاخص تودهٔ بدنی |
+| `BPXO_L` | فشار خون |
+| `SMQ_L` | سیگار |
+| `DPQ_L` | پرسش‌نامهٔ علائم افسردگی |
+| `PAQ_L` | فعالیت بدنی |
 
-**Actual download date:** Enter the real date from Phase 1 records or
-download logs. No date is invented in this template.
+کلید ادغام فایل‌ها:
 
-Reproduce by running `notebooks/phase1.ipynb` in order and exporting
-`final_data.to_csv("data/final_data.csv", index=False)` from repository root.
-Then run `notebooks/phase2_step1.ipynb`.
+`SEQN`
 
-Large/source datasets must not be included in GitHub or CW submissions,
-except if the course team expressly instructs otherwise.
+## داده تحلیلی و اندازه نمونه
+
+فایل محلی نهایی:
+
+`data/final_data.csv`
+
+این فایل از اجرای نوت‌بوک فاز اول به دست می‌آید؛ در نسخهٔ در دسترس ۶٬۳۳۷ ردیف و ۲۰ ستون دارد. تحلیل اصلی ویتامین D برای ۵٬۸۲۴ مشاهده با مقدار معتبر و وزن خون‌گیری اصلاح‌شدهٔ مثبت انجام شده است. در تحلیل هم‌زمان ویتامین D و شاخص تودهٔ بدنی ۵٬۷۴۴ مشاهدهٔ مشترک استفاده شده است.
+
+## مراحل بازسازی
+
+۱. فایل‌های رسمی موردنیاز را از وبگاه CDC دریافت کنید؛ نحوهٔ خواندن، ادغام و پاک‌سازی در نوت‌بوک فاز اول ثبت شده است.
+
+۲. نوت‌بوک را به ترتیب اجرا و خروجی نهایی را ایجاد کنید:
+
+`notebooks/phase1.ipynb`
+
+۳. اگر محیط کاری در ریشهٔ مخزن قرار دارد، خروجی را ذخیره کنید:
+
+```python
+final_data.to_csv('data/final_data.csv', index=False)
+```
+
+۴. پس از ساخت فایل، چهار نوت‌بوک فاز دوم را اجرا کنید. دادهٔ آماده‌شده برای هر چهار گام یکسان است و لازم نیست دوباره ادغام انجام شود.
+
+**تاریخ واقعی دریافت فایل‌های خام:** در نسخه‌های در دسترس ثبت یا تأیید نشده است. این اطلاعات باید از تاریخچهٔ فاز اول یا فایل‌های اولیه تکمیل شود؛ تاریخ فرضی وارد نشده است.
+
+## نکات وزن‌دهی و گمشدگی
+
+متغیر وزن خون‌گیری در فایل اصلی وجود دارد و نسخهٔ پاک‌سازی‌شده در فاز اول ایجاد شده است:
+
+`WTPH2YR`, `WTPH2YR_clean`
+
+در فایل آماده تحلیل، تمام ۶٬۳۳۷ وزن خام از نظر عددی مثبت‌اند؛ ۳۰۸ مورد مقدار `5.397605e-79` داشته و در مرحله پایانی فاز اول با شرط `abs(weight) < 1e-70` به صفر اصلاح شده‌اند. بنابراین وزن اصلاح‌شده برای ۶٬۰۲۹ نفر مثبت است. مشاهدات با ویتامین D معتبر در تحلیل فاز دوم وزن اصلاح‌شدهٔ مثبت دارند. قواعد دقیق پاک‌سازی و ساخت متغیرهای مشتق‌شده باید از کد فاز اول بازتولید شوند.
+
